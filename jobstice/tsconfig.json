@@ -2,6 +2,7 @@
   "compilerOptions": {
     "target": "es5",
     "lib": ["dom", "es6"],
+    "noEmit": true,
     "strict": true,
     "noImplicitAny": true,
     "module": "esnext",
@@ -9,8 +10,8 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "jsx": "react-jsx", // 변경된 부분: 새로운 JSX 변환을 사용
-    "jsxImportSource": "react" // React 17+에서 자동으로 React를 가져오도록 설정
+    "jsx": "react-jsxdev",
+    "jsxImportSource": "react"
   },
   "include": ["src/**/*", "declarations.d.ts"],
   "exclude": [
@@ -18,5 +19,6 @@
     "babel.config.js",
     "metro.config.js",
     "jest.config.js"
-  ]
+  ],
+  "extends": "expo/tsconfig.base"
 }

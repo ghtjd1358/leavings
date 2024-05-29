@@ -1,16 +1,16 @@
+import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+import LoginPage from './src/pages/LoginPage';
 
 const App: React.FC = () => {
   return (
-    <View>
-      <StatusBar></StatusBar>
-      <Text>Hello, TypeScript!</Text>
+    <View style={styles.container}>
+      <StatusBar style="auto" />
+      <LoginPage></LoginPage>
     </View>
   );
 };
-
-export default App;
 
 const styles = StyleSheet.create({
   container: {
@@ -18,5 +18,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    padding: 16,
   },
 });
+
+export default App;

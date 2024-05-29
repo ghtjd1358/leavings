@@ -1,10 +1,22 @@
 {
-  "extends": "@tsconfig/react-native/tsconfig.json",
   "compilerOptions": {
-    "strict": true, // strict 모드를 활성화
-    "noImplicitAny": true, // any 타입을 암시적으로 허용하지 않음
+    "target": "es5",
+    "lib": ["dom", "es6"],
+    "strict": true,
+    "noImplicitAny": true,
+    "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "esModuleInterop": true
-  }
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "jsx": "react-jsx", // 변경된 부분: 새로운 JSX 변환을 사용
+    "jsxImportSource": "react" // React 17+에서 자동으로 React를 가져오도록 설정
+  },
+  "include": ["src/**/*", "declarations.d.ts"],
+  "exclude": [
+    "node_modules",
+    "babel.config.js",
+    "metro.config.js",
+    "jest.config.js"
+  ]
 }

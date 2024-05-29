@@ -3,9 +3,9 @@ import { StyleSheet, Text, View } from 'react-native';
 
 const App: React.FC = () => {
   return (
-    <View>
+    <View style={styles.container}>
       <StatusBar></StatusBar>
-      <Text>Hello, TypeScript</Text>
+      <Text>Hello, </Text>
     </View>
   );
 };

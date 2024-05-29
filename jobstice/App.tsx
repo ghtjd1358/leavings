@@ -5,7 +5,7 @@ const App: React.FC = () => {
   return (
     <View>
       <StatusBar></StatusBar>
-      <Text>Hello, TypeScript!</Text>
+      <Text>Hello, TypeScript</Text>
     </View>
   );
 };

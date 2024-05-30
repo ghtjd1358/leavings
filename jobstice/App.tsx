@@ -19,7 +19,7 @@ const App: React.FC = () => {
       <LoginPage></LoginPage>
       <NavigationContainer>
         <Stack.Navigator initialRouteName='LoginPage'>
-           <Stack.Screen name="Login" component={LoginPage}></Stack.Screen>
+          <Stack.Screen name="Login" component={LoginPage}></Stack.Screen>
           <Stack.Screen name="Test" component={Test}></Stack.Screen>
         </Stack.Navigator>
       </NavigationContainer>

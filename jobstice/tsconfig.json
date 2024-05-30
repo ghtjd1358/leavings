@@ -1,7 +1,10 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": ["dom", "es6"],
+    "lib": [
+      "dom",
+      "es6"
+    ],
     "noEmit": true,
     "strict": true,
     "noImplicitAny": true,
@@ -13,7 +16,10 @@
     "jsx": "react-jsxdev",
     "jsxImportSource": "react"
   },
-  "include": ["src/**/*", "declarations.d.ts"],
+  "include": [
+    "src/**/*",
+    "declarations.d.ts"
+  ],
   "exclude": [
     "node_modules",
     "babel.config.js",

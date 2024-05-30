@@ -1,15 +1,57 @@
+// LoginPage.js
+
+import { View, StyleSheet } from 'react-native';
 import Login from '../components/Login/Login';
-import { SignUp, FindID, FindPassword } from '../components/Login';
+import { SignUp, FindOptions } from '../components/Login';
 
 function LoginPage() {
   return (
-    <>
-      <Login></Login>
-      <SignUp></SignUp>
-      <FindID></FindID>
-      <FindPassword></FindPassword>
-    </>
+    <View style={LoginPageLayout.container}>
+      <View style={LoginPageLayout.loginContainer}>
+        <Login />
+      </View>
+      <View style={LoginPageLayout.findContainer}>
+        <View style={FindIDLayout.container}>
+          <FindOptions />
+        </View>
+      </View>
+      <View style={LoginPageLayout.signUpContainer}>
+        <SignUp />
+      </View>
+    </View>
   );
 }
+
+const LoginPageLayout = StyleSheet.create({
+  container: {
+    flex: 1,
+    width: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+  },
+  loginContainer: {
+    width: '100%',
+    alignItems: 'center',
+    marginBottom: 20,
+  },
+  findContainer: {
+    width: '100%',
+    alignItems: 'center',
+    marginBottom: 20,
+  },
+  signUpContainer: {
+    width: '100%',
+    alignItems: 'center',
+  },
+});
+
+const FindIDLayout = StyleSheet.create({
+  container: {
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    width: '80%',
+  },
+});
 
 export default LoginPage;

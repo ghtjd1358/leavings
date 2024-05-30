@@ -10,20 +10,21 @@ const Login: React.FC = () => {
       <StatusBar style="auto" />
       <View style={Styles.logoContainer}>
         <Image source={logo} style={Styles.logo}></Image>
+
+        <TextInput
+          style={Styles.input}
+          placeholder="아이디"
+          keyboardType="default"
+        />
+        <TextInput
+          style={Styles.input}
+          placeholder="비밀번호"
+          secureTextEntry={true}
+        />
+        <TouchableOpacity style={Styles.button} onPress={() => {}}>
+          <Text style={Styles.buttonText}>로그인</Text>
+        </TouchableOpacity>
       </View>
-      <TextInput
-        style={Styles.input}
-        placeholder="아이디"
-        keyboardType="default"
-      />
-      <TextInput
-        style={Styles.input}
-        placeholder="비밀번호"
-        secureTextEntry={true}
-      />
-      <TouchableOpacity style={Styles.button} onPress={() => {}}>
-        <Text style={Styles.buttonText}>로그인</Text>
-      </TouchableOpacity>
     </>
   );
 };

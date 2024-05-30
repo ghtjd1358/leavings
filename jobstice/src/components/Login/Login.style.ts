@@ -1,9 +1,12 @@
 import { StyleSheet } from 'react-native';
+import { _Colors } from '../../styles/colors';
 
 const Styles = StyleSheet.create({
   logoContainer: {
     marginBottom: 10,
     alignItems: 'center',
+    justifyContent: 'center',
+    width: '100%',
   },
 
   logo: {
@@ -23,7 +26,7 @@ const Styles = StyleSheet.create({
   button: {
     width: '80%',
     height: 40,
-    backgroundColor: '#84A6FF',
+    backgroundColor: _Colors.btnColor,
     alignItems: 'center',
     justifyContent: 'center',
   },

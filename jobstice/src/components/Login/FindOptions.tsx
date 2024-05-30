@@ -1,3 +1,4 @@
+// FindOptions.js
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
 const FindOptions = () => {

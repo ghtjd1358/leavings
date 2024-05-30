@@ -17,7 +17,7 @@ const SignUpStyles = StyleSheet.create({
 
   SignUpText2: {
     fontWeight: 'bold',
-    color: _Colors.btnColor,
+    color: _Colors.PrimaryBlue,
   },
 });
 

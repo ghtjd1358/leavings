@@ -1,3 +1,5 @@
+// LoginPage.js
+
 import { View, StyleSheet } from 'react-native';
 import Login from '../components/Login/Login';
 import { SignUp, FindOptions } from '../components/Login';

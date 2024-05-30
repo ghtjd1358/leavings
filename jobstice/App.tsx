@@ -13,6 +13,7 @@ const App: React.FC = () => {
   const Stack = createStackNavigator();
 
   return (
+
     // <View style={styles.container}>
     // {/* <StatusBar style="auto" /> */}
     //   {/* <LoginPage></LoginPage> */}

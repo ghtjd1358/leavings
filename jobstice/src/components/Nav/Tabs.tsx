@@ -59,9 +59,10 @@ export default function Tabs() {
   return (
     <BottomTab.Navigator
       screenOptions={{
-        tabBarActiveTintColor: _Colors.PrimaryBlue,
+        tabBarActiveTintColor: _Colors._PrimaryBlue,
         tabBarShowLabel: false, // 하단에 이름 숨기는 속성
       }}
+      backBehavior={'history'}
     >
       <BottomTab.Screen
         name="Home"
@@ -73,7 +74,7 @@ export default function Tabs() {
             <Ionicons
               name="home"
               size={24}
-              color={focused ? _Colors.PrimaryBlue : 'gray'}
+              color={focused ? _Colors._PrimaryBlue : 'gray'}
             />
           ),
         }}
@@ -84,11 +85,12 @@ export default function Tabs() {
         options={{
           headerShown: false,
           tabBarLabel: '캘린더',
+
           tabBarIcon: ({ focused }) => (
             <Ionicons
               name="calendar"
               size={24}
-              color={focused ? _Colors.PrimaryBlue : 'gray'}
+              color={focused ? _Colors._PrimaryBlue : 'gray'}
             />
           ),
         }}
@@ -103,7 +105,7 @@ export default function Tabs() {
             <Ionicons
               name="megaphone"
               size={24}
-              color={focused ? _Colors.PrimaryBlue : 'gray'}
+              color={focused ? _Colors._PrimaryBlue : 'gray'}
             />
           ),
         }}
@@ -118,7 +120,7 @@ export default function Tabs() {
             <Ionicons
               name="chatbubble-ellipses"
               size={24}
-              color={focused ? _Colors.PrimaryBlue : 'gray'}
+              color={focused ? _Colors._PrimaryBlue : 'gray'}
             />
           ),
         }}

@@ -1,17 +1,23 @@
 import { StatusBar } from 'expo-status-bar';
-import { Text, View, TextInput, TouchableOpacity, Image, StyleSheet } from 'react-native';
-import {useState} from 'react';
+import {
+  Text,
+  View,
+  TextInput,
+  TouchableOpacity,
+  Image,
+  StyleSheet,
+} from 'react-native';
+import { useState } from 'react';
 import axios from 'axios';
 
 const Test: React.FC = () => {
-    // DB 연동 테스트를 위한 함수
-    const [isDB, setIsDB] = useState('');
-
+  // DB 연동 테스트를 위한 함수
+  const [isDB, setIsDB] = useState('');
 
   const dataPost = async (data: string) => {
     try {
       const res = await axios.post(
-        'http://192.168.0.24:3000',
+        'http://localhost:8081',
         { content: data },
         {
           headers: {
@@ -39,7 +45,7 @@ const Test: React.FC = () => {
   return (
     <>
       <StatusBar style="auto" />
-            <View style={styles.test}>
+      <View style={styles.test}>
         <TextInput
           onChangeText={(e) => {
             setIsDB(e);
@@ -50,16 +56,15 @@ const Test: React.FC = () => {
           style={styles.input}
         />
       </View>
-     
     </>
   );
 };
 
 const styles = StyleSheet.create({
   test: {
-    flexDirection: 'row'
+    flexDirection: 'row',
   },
-    input: {
+  input: {
     flex: 1,
     backgroundColor: 'white',
     borderColor: 'black',

@@ -7,35 +7,32 @@ import MainPage from './src/pages/MainPage';
 
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { Header, createStackNavigator } from '@react-navigation/stack';
 
 const App: React.FC = () => {
   const Stack = createStackNavigator();
 
   return (
-    // <View style={styles.container}>
-    // {/* <StatusBar style="auto" /> */}
-    //   {/* <LoginPage></LoginPage> */}
-
-    // {/* </View> */}
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Main">
-        <Stack.Screen name="Main" component={MainPage} />
-        <Stack.Screen name="Login" component={LoginPage} />
-        <Stack.Screen name="Test" component={Test} />
+        <Stack.Screen
+          name="Main"
+          component={MainPage}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Login"
+          component={LoginPage}
+          options={{ headerTitleAlign: 'center' }}
+        />
+        <Stack.Screen
+          name="Test"
+          component={Test}
+          options={{ headerTitleAlign: 'center' }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'pink',
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: 16,
-  },
-});
 
 export default App;

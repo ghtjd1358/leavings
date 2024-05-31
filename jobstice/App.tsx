@@ -26,14 +26,12 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { _Colors } from './src/styles/colors';
 import Tabs from './src/components/Nav/Tabs';
 
-
 const Stack = createStackNavigator();
 
 // 하단 탭
 
 function AppNavigator() {
   return (
-
     <Stack.Navigator initialRouteName="Main">
       <Stack.Screen name="Login" component={LoginPage} />
       <Stack.Screen
@@ -50,7 +48,6 @@ const App: React.FC = () => {
   return (
     <NavigationContainer>
       <AppNavigator />
-
     </NavigationContainer>
   );
 };

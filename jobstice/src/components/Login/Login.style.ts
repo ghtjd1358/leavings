@@ -16,22 +16,24 @@ const Styles = StyleSheet.create({
   input: {
     width: '80%',
     height: 40,
-    borderColor: '#ccc',
+    borderColor: _Colors._Gray_4,
     borderWidth: 1,
-    borderRadius: 5,
+    borderRadius: 3,
     paddingHorizontal: 10,
-    marginBottom: 12,
+    marginBottom: 10,
   },
-
   button: {
     width: '80%',
     height: 40,
-    backgroundColor: _Colors.PrimaryBlue,
+    backgroundColor: _Colors._PrimaryBlue,
     alignItems: 'center',
     justifyContent: 'center',
+    borderRadius: 3,
+    marginTop: 10,
   },
   buttonText: {
-    color: '#fff',
+    color: _Colors._white,
+    fontWeight: 500,
   },
 });
 

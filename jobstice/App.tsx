@@ -20,10 +20,12 @@ import MainPage from './src/pages/MainPage';
 
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
+
 import { createStackNavigator } from '@react-navigation/stack';
 // 하단 Navi
 import { _Colors } from './src/styles/colors';
 import Tabs from './src/components/Nav/Tabs';
+
 
 const Stack = createStackNavigator();
 
@@ -31,6 +33,7 @@ const Stack = createStackNavigator();
 
 function AppNavigator() {
   return (
+
     <Stack.Navigator initialRouteName="Main">
       <Stack.Screen name="Login" component={LoginPage} />
       <Stack.Screen
@@ -47,18 +50,9 @@ const App: React.FC = () => {
   return (
     <NavigationContainer>
       <AppNavigator />
+
     </NavigationContainer>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'pink',
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: 16,
-  },
-});
 
 export default App;

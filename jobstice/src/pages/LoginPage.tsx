@@ -34,7 +34,7 @@ const LoginPageLayout = StyleSheet.create({
   loginContainer: {
     width: '100%',
     alignItems: 'center',
-    marginBottom: 20,
+    marginBottom: 10,
   },
   findContainer: {
     width: '100%',

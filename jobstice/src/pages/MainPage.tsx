@@ -3,6 +3,7 @@ import { StatusBar } from 'expo-status-bar';
 
 function MainPage({ navigation }: any) {
   return (
+
     <>
       <View style={styles.container}>
         <Text>HOME</Text>
@@ -11,16 +12,21 @@ function MainPage({ navigation }: any) {
         <StatusBar style="auto" />
       </View>
     </>
+
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: 'row',
-    backgroundColor: '#fff',
+    paddingHorizontal: 20,
+    flexDirection: 'column',
+    backgroundColor: 'white',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  innerBtnContianer: {
+    flexDirection: 'row',
   },
 });
 

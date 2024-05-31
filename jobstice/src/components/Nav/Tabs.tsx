@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { BackHandler, Alert } from 'react-native';
+import { BackHandler, Alert, TouchableOpacity } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -17,37 +17,91 @@ const EmploymentStack = createStackNavigator();
 const CommunityStack = createStackNavigator();
 
 // stack
-function HomeStackScreen() {
+function HomeStackScreen({ navigation }) {
   return (
     <HomeStack.Navigator>
-      <HomeStack.Screen name="홈" component={MainPage} />
+      <HomeStack.Screen
+        name="홈"
+        component={MainPage}
+        options={{
+          headerShown: true,
+          // headerBackVisible: true,
+        }}
+      />
     </HomeStack.Navigator>
   );
 }
 
-function CalendarStackScreen() {
+function CalendarStackScreen({ navigation }) {
   return (
     <CalendarStack.Navigator>
-      <CalendarStack.Screen name="캘린더" component={CalendarPage} />
+      <CalendarStack.Screen
+        name="캘린더"
+        component={CalendarPage}
+        options={{
+          headerShown: true,
+          // headerBackVisible: true,
+          headerLeft: () => (
+            <TouchableOpacity onPress={() => navigation.goBack()}>
+              <Ionicons
+                name="arrow-back"
+                size={24}
+                color="black"
+                style={{ marginLeft: 15 }}
+              />
+            </TouchableOpacity>
+          ),
+        }}
+      />
     </CalendarStack.Navigator>
   );
 }
 
-function EmploymentStackScreen() {
+function EmploymentStackScreen({ navigation }) {
   return (
     <EmploymentStack.Navigator>
-      <EmploymentStack.Screen name="채용공고" component={EmploymentPage} />
+      <EmploymentStack.Screen
+        name="채용공고"
+        component={EmploymentPage}
+        options={{
+          headerShown: true,
+          // headerBackVisible: true,
+          headerLeft: () => (
+            <TouchableOpacity onPress={() => navigation.goBack()}>
+              <Ionicons
+                name="arrow-back"
+                size={24}
+                color="black"
+                style={{ marginLeft: 15 }}
+              />
+            </TouchableOpacity>
+          ),
+        }}
+      />
     </EmploymentStack.Navigator>
   );
 }
 
-function CommunityStackScreen() {
+function CommunityStackScreen({ navigation }) {
   return (
     <CommunityStack.Navigator>
       <CommunityStack.Screen
         name="채팅방"
         component={CommunityPage}
-        options={{ headerShown: true }}
+        options={{
+          headerShown: true,
+          // headerBackVisible: true,
+          headerLeft: () => (
+            <TouchableOpacity onPress={() => navigation.goBack()}>
+              <Ionicons
+                name="arrow-back"
+                size={24}
+                color="black"
+                style={{ marginLeft: 15 }}
+              />
+            </TouchableOpacity>
+          ),
+        }}
       />
     </CommunityStack.Navigator>
   );
@@ -58,6 +112,7 @@ function CommunityStackScreen() {
 export default function Tabs() {
   return (
     <BottomTab.Navigator
+      backBehavior="history"
       screenOptions={{
         tabBarActiveTintColor: _Colors.PrimaryBlue,
         tabBarShowLabel: false, // 하단에 이름 숨기는 속성

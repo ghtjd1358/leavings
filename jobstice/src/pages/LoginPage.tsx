@@ -22,6 +22,7 @@ function LoginPage() {
   );
 }
 
+// Login 페이지 레이아웃만 적용
 const LoginPageLayout = StyleSheet.create({
   container: {
     flex: 1,

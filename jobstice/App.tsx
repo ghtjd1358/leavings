@@ -1,36 +1,56 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View, TextInput } from 'react-native';
+import {
+  StyleSheet,
+  View,
+  TextInput,
+  Text,
+  BackHandler,
+  Alert,
+} from 'react-native';
+// 아이콘 라이브러리
+import { Ionicons } from '@expo/vector-icons';
+
+// 페이지
 import LoginPage from './src/pages/LoginPage';
 import Test from './src/components/DBTest/Test';
 import MainPage from './src/pages/MainPage';
 
+// 페이지
+
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
-import { Header, createStackNavigator } from '@react-navigation/stack';
+
+import { createStackNavigator } from '@react-navigation/stack';
+// 하단 Navi
+import { _Colors } from './src/styles/colors';
+import Tabs from './src/components/Nav/Tabs';
+
+
+const Stack = createStackNavigator();
+
+// 하단 탭
+
+function AppNavigator() {
+  return (
+
+    <Stack.Navigator initialRouteName="Main">
+      <Stack.Screen name="Login" component={LoginPage} />
+      <Stack.Screen
+        name="Main"
+        component={Tabs}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen name="Test" component={Test} />
+    </Stack.Navigator>
+  );
+}
 
 const App: React.FC = () => {
-  const Stack = createStackNavigator();
-
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Main">
-        <Stack.Screen
-          name="Main"
-          component={MainPage}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="Login"
-          component={LoginPage}
-          options={{ headerTitleAlign: 'center' }}
-        />
-        <Stack.Screen
-          name="Test"
-          component={Test}
-          options={{ headerTitleAlign: 'center' }}
-        />
-      </Stack.Navigator>
+      <AppNavigator />
+
     </NavigationContainer>
   );
 };

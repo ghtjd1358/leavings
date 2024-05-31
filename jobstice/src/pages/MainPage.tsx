@@ -3,14 +3,16 @@ import { StatusBar } from 'expo-status-bar';
 
 function MainPage({ navigation }: any) {
   return (
-    <View style={styles.container}>
-      <StatusBar style="auto" />
-      <View style={styles.innerBtnContianer}>
+
+    <>
+      <View style={styles.container}>
+        <Text>HOME</Text>
         <Button title="Login" onPress={() => navigation.navigate('Login')} />
         <Button title="Test" onPress={() => navigation.navigate('Test')} />
+        <StatusBar style="auto" />
       </View>
-      <Text>HOME</Text>
-    </View>
+    </>
+
   );
 }
 

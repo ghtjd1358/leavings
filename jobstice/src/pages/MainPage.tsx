@@ -1,6 +1,5 @@
 import { View, Text, StyleSheet, Button } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
-import NavePage from './NavPage';
 
 function MainPage({ navigation }: any) {
   return (

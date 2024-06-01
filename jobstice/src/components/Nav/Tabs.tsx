@@ -107,8 +107,7 @@ function CommunityStackScreen({ navigation }) {
   );
 }
 
-//
-
+// 하단 tab
 export default function Tabs() {
   return (
     <BottomTab.Navigator

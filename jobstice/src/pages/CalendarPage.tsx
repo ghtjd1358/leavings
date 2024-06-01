@@ -1,12 +1,12 @@
 import { View, Text } from 'react-native';
-import Calendar from '../components/Calendar/Calendar';
+import CalendarComponent from '../components/Calendar/Calendar';
 
 function CalendarPage() {
   return (
     <>
       <View>
         <Text>
-          <Calendar />
+          <CalendarComponent />
         </Text>
       </View>
     </>

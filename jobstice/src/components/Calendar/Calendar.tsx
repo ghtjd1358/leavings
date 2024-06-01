@@ -1,6 +1,33 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, Dimensions } from 'react-native';
-import { CalendarList, LocaleConfig } from 'react-native-calendars';
+import {
+  CalendarList,
+  CalendarListProps,
+  LocaleConfig,
+} from 'react-native-calendars';
+import CalendarModal from './CalendarModal';
+
+type CustomTheme = CalendarListProps['theme'] & {
+  'stylesheet.calendar.header': {
+    dayTextAtIndex0: {
+      color: string;
+    };
+    dayTextAtIndex6: {
+      color: string;
+    };
+  };
+};
+
+const customTheme: CustomTheme = {
+  'stylesheet.calendar.header': {
+    dayTextAtIndex0: {
+      color: 'red',
+    },
+    dayTextAtIndex6: {
+      color: 'blue',
+    },
+  },
+};
 
 // 화면 너비를 가져오기 위해 Dimensions 사용
 const { width } = Dimensions.get('window');
@@ -50,29 +77,37 @@ LocaleConfig.defaultLocale = 'fr';
 
 const CalendarListComponent = () => {
   const [selected, setSelected] = useState('');
+  const [isModalVisible, setIsModalVisible] = useState(false);
 
   return (
     <View style={styles.container}>
       <Text style={styles.header}></Text>
       <CalendarList
-        theme={{
-          'stylesheet.calendar.header': {
-            dayTextAtIndex0: {
-              color: 'red',
-            },
-            dayTextAtIndex6: {
-              color: 'blue',
-            },
-          },
-        }}
+        theme={customTheme}
         hideArrows={false}
         hideExtraDays={true} // 이전 다음달 날짜 삭제
         style={styles.calendar}
         onDayPress={(day) => {
           setSelected(day.dateString);
         }}
-        markingType={'period'}
+        // markedDates={{
+        //   [selected]: {
+        //     selected: true, // 백그라운드 동그라미
+        //     disableTouchEvent: true,
+        //     selectedTextColor: '#b6c1cd',
+        //     marked: true, // 스케줄 있으면 나타나게할것
+        //     dotColor: '#50cebb', // 스케줄 있으면 점 표시
+        //   },
+        // }}
+        // markingType={'period'}
         markedDates={{
+          [selected]: {
+            selected: true,
+            disableTouchEvent: true,
+            selectedColor: '#70d7c7',
+            selectedTextColor: '#black',
+          },
+
           '2024-05-15': { marked: true, dotColor: '#50cebb' },
           '2024-05-16': { marked: true, dotColor: '#50cebb' },
           '2024-05-21': {
@@ -102,6 +137,8 @@ const CalendarListComponent = () => {
         horizontal={true} // 수평 스크롤 활성화
         pagingEnabled={true} // 페이지 단위 스크롤
       />
+
+      {/* <CalendarModal /> */}
     </View>
   );
 };

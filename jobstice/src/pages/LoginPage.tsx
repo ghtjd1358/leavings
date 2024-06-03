@@ -4,7 +4,7 @@ import { View, StyleSheet } from 'react-native';
 import Login from '../components/Login/Login';
 import { SignUp, FindOptions } from '../components/Login';
 
-function LoginPage() {
+function LoginPage({ navigation }: any) {
   return (
     <View style={LoginPageLayout.container}>
       <View style={LoginPageLayout.loginContainer}>
@@ -12,11 +12,11 @@ function LoginPage() {
       </View>
       <View style={LoginPageLayout.findContainer}>
         <View style={FindIDLayout.container}>
-          <FindOptions />
+          <FindOptions navigation={navigation} />
         </View>
       </View>
       <View style={LoginPageLayout.signUpContainer}>
-        <SignUp />
+        <SignUp navigation={navigation} />
       </View>
     </View>
   );
@@ -27,14 +27,15 @@ const LoginPageLayout = StyleSheet.create({
   container: {
     flex: 1,
     width: '100%',
-    justifyContent: 'center',
     alignItems: 'center',
     padding: 20,
+    backgroundColor: 'white',
   },
   loginContainer: {
     width: '100%',
     alignItems: 'center',
-    marginBottom: 10,
+    marginBottom: 20,
+    marginTop: 150,
   },
   findContainer: {
     width: '100%',

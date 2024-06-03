@@ -17,7 +17,7 @@ const EmploymentStack = createStackNavigator();
 const CommunityStack = createStackNavigator();
 
 // stack
-function HomeStackScreen({ navigation }) {
+function HomeStackScreen({ navigation }: any) {
   return (
     <HomeStack.Navigator>
       <HomeStack.Screen
@@ -32,7 +32,7 @@ function HomeStackScreen({ navigation }) {
   );
 }
 
-function CalendarStackScreen({ navigation }) {
+function CalendarStackScreen({ navigation }: any) {
   return (
     <CalendarStack.Navigator>
       <CalendarStack.Screen
@@ -57,7 +57,7 @@ function CalendarStackScreen({ navigation }) {
   );
 }
 
-function EmploymentStackScreen({ navigation }) {
+function EmploymentStackScreen({ navigation }: any) {
   return (
     <EmploymentStack.Navigator>
       <EmploymentStack.Screen
@@ -82,7 +82,7 @@ function EmploymentStackScreen({ navigation }) {
   );
 }
 
-function CommunityStackScreen({ navigation }) {
+function CommunityStackScreen({ navigation }: any) {
   return (
     <CommunityStack.Navigator>
       <CommunityStack.Screen
@@ -117,7 +117,6 @@ export default function Tabs() {
         tabBarActiveTintColor: _Colors._PrimaryBlue,
         tabBarShowLabel: false, // 하단에 이름 숨기는 속성
       }}
-      backBehavior={'history'}
     >
       <BottomTab.Screen
         name="Home"

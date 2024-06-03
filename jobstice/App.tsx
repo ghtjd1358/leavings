@@ -15,6 +15,7 @@ import { Ionicons } from '@expo/vector-icons';
 import LoginPage from './src/pages/LoginPage';
 import Test from './src/components/DBTest/Test';
 import MainPage from './src/pages/MainPage';
+import EmploymentPage from './src/pages/EmploymentPage';
 
 // 페이지
 

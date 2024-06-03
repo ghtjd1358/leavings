@@ -2,7 +2,7 @@ import { View, Text, StyleSheet } from 'react-native';
 import Employment from '../components/Employment/Employment';
 import EmployTab from '../components/Employment/EmployTab';
 
-export default function EmploymentPage() {
+export default function EmploymentPage2() {
   return (
     <View>
         <EmployTab/>

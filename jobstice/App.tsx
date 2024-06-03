@@ -15,7 +15,11 @@ import { Ionicons } from '@expo/vector-icons';
 import LoginPage from './src/pages/LoginPage';
 import Test from './src/components/DBTest/Test';
 import MainPage from './src/pages/MainPage';
-
+import SignUpPage from './src/pages/SignUpPage';
+import FindIdPage from './src/pages/FindIdPage';
+import FindPwPage from './src/pages/FindPwPage';
+import PwInput from './src/components/SignUpPage/PwInput';
+import NickNameInput from './src/components/SignUpPage/NickNameInput';
 // 페이지
 
 import 'react-native-gesture-handler';
@@ -33,13 +37,42 @@ const Stack = createStackNavigator();
 function AppNavigator() {
   return (
     <Stack.Navigator initialRouteName="Main">
-      <Stack.Screen name="Login" component={LoginPage} />
+      <Stack.Screen
+        name="Login"
+        component={LoginPage}
+        options={{ headerTitle: '' }}
+      />
       <Stack.Screen
         name="Main"
         component={Tabs}
         options={{ headerShown: false }}
       />
       <Stack.Screen name="Test" component={Test} />
+      <Stack.Screen
+        name="SignUp"
+        component={SignUpPage}
+        options={{ headerTitle: '' }}
+      />
+      <Stack.Screen
+        name="FindId"
+        component={FindIdPage}
+        options={{ headerTitle: '' }}
+      />
+      <Stack.Screen
+        name="FindPw"
+        component={FindPwPage}
+        options={{ headerTitle: '' }}
+      />
+      <Stack.Screen
+        name="registerPW"
+        component={PwInput}
+        options={{ headerTitle: '' }}
+      />
+      <Stack.Screen
+        name="registerNickName"
+        component={NickNameInput}
+        options={{ headerTitle: '' }}
+      />
     </Stack.Navigator>
   );
 }

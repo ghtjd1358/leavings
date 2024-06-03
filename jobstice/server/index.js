@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 
 const Ctest = require('./controllers/Ctest.js');
+const calendarRoutes = require('./routes/CalendarRoutes.js');
 
 const app = express();
 const port = 3000;
@@ -21,6 +22,8 @@ app.get('/', (req, res) => {
 });
 
 app.post('/', Ctest.testWrite);
+// 캘린더
+app.use('/api', calendarRoutes);
 
 app.listen(port, () => {
   console.log(`localhost:${port} open`);

@@ -8,14 +8,12 @@ const Styles = StyleSheet.create({
     alignItems: 'center',
   },
   text: {
-    fontSize: 16,
-    color: '#000',
-    opacity: 0.3,
+    fontSize: 14,
+    color: _Colors._Gray_5,
   },
   separator: {
-    fontSize: 16,
-    color: '#000',
-    opacity: 0.3,
+    fontSize: 14,
+    color: _Colors._Gray_5,
   },
 });
 

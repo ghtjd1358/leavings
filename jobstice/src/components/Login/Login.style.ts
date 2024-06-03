@@ -9,10 +9,11 @@ const Styles = StyleSheet.create({
     width: '100%',
   },
 
-  logo: {
-    marginBottom: '10%',
+  Title: {
+    marginBottom: 30,
+    fontSize: 20,
+    fontWeight: 'bold',
   },
-
   input: {
     width: '80%',
     height: 40,
@@ -33,7 +34,7 @@ const Styles = StyleSheet.create({
   },
   buttonText: {
     color: _Colors._white,
-    fontWeight: 500,
+    fontWeight: 'bold',
   },
 });
 

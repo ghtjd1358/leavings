@@ -1,13 +1,11 @@
 const mongoose = require('mongoose');
-
-const DB_KEY =
-  'mongodb+srv://chlwls4m:Q1SUDKB2yOQwSXpO@jobstice.fzmrjyo.mongodb.net/';
-
+const dotenv = require('dotenv');
+dotenv.config();
 
 //  DB 실행 함수
 const connect = () => {
   mongoose
-    .connect(DB_KEY, {
+    .connect(process.env.DB_KEY, {
       dbName: 'jobstice',
     })
     .then(() => {

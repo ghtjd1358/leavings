@@ -10,7 +10,7 @@ const Login: React.FC = () => {
     <>
       <StatusBar style="auto" />
       <View style={Styles.logoContainer}>
-        <Image source={logo} style={Styles.logo}></Image>
+        <Text style={Styles.Title}>로그인</Text>
         <TextInput
           style={Styles.input}
           placeholderTextColor={_Colors._Gray_5}

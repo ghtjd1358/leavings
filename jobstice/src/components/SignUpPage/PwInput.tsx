@@ -2,6 +2,7 @@ import { Text, View, TextInput, TouchableOpacity } from 'react-native';
 import { useEffect, useState } from 'react';
 import Styles from './SignUpPage.style';
 import AntDesign from '@expo/vector-icons/AntDesign';
+import setUserStore from '../../../store/LoginStore';
 
 function PwInput({ navigation, setStep }: any) {
   const [isPW, setIsPW] = useState('');
@@ -28,7 +29,12 @@ function PwInput({ navigation, setStep }: any) {
     };
     checkPwValue();
   }, [isPW, isCheck]);
-  123;
+
+  const { user_ID, user_PW, setPW } = setUserStore();
+
+  //   useEffect(() => {
+  //     console.log('아이디 >', user_ID);
+  //   }, [user_ID]);
 
   return (
     <>
@@ -64,7 +70,10 @@ function PwInput({ navigation, setStep }: any) {
       </View>
       <TouchableOpacity
         style={verification ? Styles.activeButton : Styles.button}
-        onPress={() => setStep('NICKNAME')}
+        onPress={() => {
+          setPW(isCheck);
+          setStep('NICKNAME');
+        }}
         disabled={!verification}
       >
         <Text style={Styles.buttonText}>다음</Text>

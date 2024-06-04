@@ -1,29 +1,29 @@
 import { create } from 'zustand';
 
 interface UserStore {
-  ID: string;
-  PW: string;
-  NickName: string;
+  user_ID: string;
+  user_PW: string;
+  user_NickName: string;
   setID: (value: string) => void;
   setPW: (value: string) => void;
-  setNIckName: (value: string) => void;
+  setNickName: (value: string) => void;
 }
 
 const setUserStore = create<UserStore>()((set, get) => ({
-  ID: '',
-  PW: '',
-  NickName: '',
+  user_ID: '',
+  user_PW: '',
+  user_NickName: '',
   setID: (value: string) =>
     set({
-      ID: value,
+      user_ID: value,
     }),
   setPW: (value: string) =>
     set({
-      PW: value,
+      user_PW: value,
     }),
-  setNIckName: (value: string) =>
+  setNickName: (value: string) =>
     set({
-      NickName: value,
+      user_NickName: value,
     }),
 }));
 

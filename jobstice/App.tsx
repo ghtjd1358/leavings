@@ -15,16 +15,13 @@ import { Ionicons } from '@expo/vector-icons';
 import LoginPage from './src/pages/LoginPage';
 import Test from './src/components/DBTest/Test';
 import MainPage from './src/pages/MainPage';
-<<<<<<< HEAD
 import EmploymentPage from './src/pages/EmploymentPage';
 
-=======
 import SignUpPage from './src/pages/SignUpPage';
 import FindIdPage from './src/pages/FindIdPage';
 import FindPwPage from './src/pages/FindPwPage';
 import PwInput from './src/components/SignUpPage/PwInput';
 import NickNameInput from './src/components/SignUpPage/NickNameInput';
->>>>>>> 2d6ac290b07f538a414f040ef836900c03686fe2
 // 페이지
 
 import 'react-native-gesture-handler';

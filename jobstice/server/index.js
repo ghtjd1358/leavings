@@ -6,6 +6,11 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const axios = require('axios'); 
 const Ctest = require('./controllers/Ctest.js');
+<<<<<<< HEAD
+=======
+const Cuser = require('./controllers/Cuser.js');
+
+>>>>>>> b5d7821dd675b5e74067cc74c8b130dd58b3cb02
 const app = express();
 const port = 3000;
 
@@ -13,8 +18,12 @@ connect(); // DB 연결 함수
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+<<<<<<< HEAD
 app.use(cors({ origin: '*' }));
 app.use(express.json());
+=======
+app.use(cors());
+>>>>>>> b5d7821dd675b5e74067cc74c8b130dd58b3cb02
 
 
 
@@ -43,6 +52,8 @@ app.get('/', (req, res) => {
 });
 
 app.post('/', Ctest.testWrite);
+
+app.post('/signup', Cuser.register);
 
 app.listen(port, () => {
   console.log(`localhost:${port} open`);

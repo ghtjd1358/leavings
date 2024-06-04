@@ -19,7 +19,7 @@ const Test: React.FC = () => {
   const dataPost = async (data: string) => {
     try {
       const res = await axios.post(
-        'http://192.168.1.164:8081',
+        'http://172.30.1.67:8081',
         { content: data },
         {
           headers: {

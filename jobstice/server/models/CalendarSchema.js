@@ -4,7 +4,7 @@ const { Schema } = require('mongoose');
 const CalendarSchema = new Schema({
   user_id: {
     type: Schema.Types.ObjectId,
-    ref: 'user',
+    ref: 'User',
     require: true,
   },
   title: {

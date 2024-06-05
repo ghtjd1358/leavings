@@ -12,10 +12,6 @@ function IdInput({ navigation, setStep }: any) {
   //zustand
   const { user_ID, setID } = setUserStore();
 
-  //   useEffect(() => {
-  //     console.log('아이디 >', user_ID);
-  //   }, [user_ID]);
-
   return (
     <>
       <View style={Styles.inputContianer}>

@@ -27,7 +27,7 @@ import NickNameInput from './src/components/SignUpPage/NickNameInput';
 // 페이지
 
 import 'react-native-gesture-handler';
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer, CommonActions } from '@react-navigation/native';
 
 import { createStackNavigator } from '@react-navigation/stack';
 // 하단 Navi

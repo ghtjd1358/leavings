@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import { styles } from './CalendarContent.style';
 
-const CalendarContent = ({ date }) => {
+const CalendarContent = ({ date }: any) => {
   const [modalVisible, setModalVisible] = useState(false);
 
   return (

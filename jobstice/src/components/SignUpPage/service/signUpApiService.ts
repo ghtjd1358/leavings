@@ -7,7 +7,7 @@ export const register = async (data: {
 }) => {
   try {
     const res = await axios.post(
-      'http://172.30.1.67:8081/signup',
+      'http://localhost:3000/signup',
       {
         user_ID: data.user_ID,
         user_PW: data.user_PW,

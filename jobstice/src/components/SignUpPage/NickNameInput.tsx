@@ -21,7 +21,7 @@ function NickNameInput({ navigation, setStep }: any) {
       };
       const response = await register(data);
       console.log('회원가입 성공:', response.config.data);
-      console.log('status >', typeof response.status);
+      console.log('status >', response.status);
       // if (response.status === '200') {
       //   setStep('COMPLETE');
       // }

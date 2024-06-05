@@ -6,9 +6,23 @@ const Styles = StyleSheet.create({
     // backgroundColor: 'red',
   },
   header: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingHorizontal: 10,
+  },
+  headerText: {
     fontSize: 18,
     fontWeight: 'bold',
-    paddingHorizontal: 10,
+  },
+  headerArrow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    color: _Colors._Gray_4,
+  },
+  arrowText: {
+    color: _Colors._Gray_6,
+    fontSize: 16,
+    fontWeight: 'bold',
   },
   calendarContainer: {
     flexDirection: 'row',

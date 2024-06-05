@@ -7,6 +7,7 @@ export const register = async (data: {
 }) => {
   try {
     const res = await axios.post(
+      // 각자 주소로 변경
       'http://localhost:3000/signup',
       {
         user_ID: data.user_ID,

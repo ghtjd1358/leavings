@@ -6,11 +6,8 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const axios = require('axios'); 
 const Ctest = require('./controllers/Ctest.js');
-<<<<<<< HEAD
-=======
 const Cuser = require('./controllers/Cuser.js');
 
->>>>>>> b5d7821dd675b5e74067cc74c8b130dd58b3cb02
 const app = express();
 const port = 3000;
 
@@ -18,12 +15,9 @@ connect(); // DB 연결 함수
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-<<<<<<< HEAD
 app.use(cors({ origin: '*' }));
 app.use(express.json());
-=======
-app.use(cors());
->>>>>>> b5d7821dd675b5e74067cc74c8b130dd58b3cb02
+
 
 
 
@@ -32,18 +26,18 @@ app.get('/job-search', async (req, res) => {
   try {
       const apiUrl = `https://oapi.saramin.co.kr/job-search?access-key=${API_KEY}`;
       const response = await axios.get(apiUrl,{
-        headers : {
-          'Accept' : 'application/sjon'
+        headers: {
+          'Accept': 'application/json'
         }
       });
-      const data = response.data; // await 키워드 제거
+      const data = response.data;
       console.log(data);
       console.log(data.jobs);
 
       res.json(data);
   } catch (error) {
       console.error(error);
-      res.status(500).send('진짜 ㅈ 같네');
+      res.status(500).send('서버에서 데이터를 가져오는데 실패했습니다.');
   }
 });
 

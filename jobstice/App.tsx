@@ -15,6 +15,7 @@ import { Ionicons } from '@expo/vector-icons';
 import LoginPage from './src/pages/LoginPage';
 import Test from './src/components/DBTest/Test';
 import MainPage from './src/pages/MainPage';
+
 import EmploymentPage from './src/pages/EmploymentPage';
 
 import SignUpPage from './src/pages/SignUpPage';
@@ -22,7 +23,6 @@ import FindIdPage from './src/pages/FindIdPage';
 import FindPwPage from './src/pages/FindPwPage';
 import PwInput from './src/components/SignUpPage/PwInput';
 import NickNameInput from './src/components/SignUpPage/NickNameInput';
-
 
 // 페이지
 

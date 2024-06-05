@@ -27,9 +27,14 @@ function SignUpContainer({ navigation }: any) {
       e.preventDefault();
       handleBackPress();
     });
+    // if (step === 'COMPLETE') {
+    //   navigation.navigate('Login');
+    // }
 
     return unsubscribe;
   }, [navigation, step]);
+
+  //navigation, step
 
   const handleBackPress = () => {
     if (step === 'PW') {

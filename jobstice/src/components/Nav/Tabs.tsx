@@ -24,7 +24,7 @@ function HomeStackScreen({ navigation }: any) {
         name="홈"
         component={MainPage}
         options={{
-          headerShown: true,
+          headerShown: false,
           // headerBackVisible: true,
         }}
       />

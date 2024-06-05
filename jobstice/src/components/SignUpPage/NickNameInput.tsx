@@ -1,22 +1,15 @@
 import { Text, View, TextInput, TouchableOpacity } from 'react-native';
-
 import Styles from './SignUpPage.style';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import setUserStore from '../../../store/LoginStore';
-
 import { register } from '../SignUpPage/service/signUpApiService';
+import { CommonActions } from '@react-navigation/native';
 
 function NickNameInput({ navigation, setStep }: any) {
   const [isNickName, setIsNickName] = useState('');
   const [focused, setFocused] = useState(false);
 
-  const { user_ID, user_PW, user_NickName, setNickName } = setUserStore();
-
-  //   useEffect(() => {
-  //     console.log('아이디 >', user_ID);
-  //     console.log('비밀번호 >', user_PW);
-  //     console.log('닉네임 >', user_NickName);
-  //   }, [user_ID, user_PW, user_NickName]);
+  const { user_ID, user_PW, setNickName } = setUserStore();
 
   const handleRegister = async () => {
     setNickName(isNickName);
@@ -28,7 +21,10 @@ function NickNameInput({ navigation, setStep }: any) {
       };
       const response = await register(data);
       console.log('회원가입 성공:', response.config.data);
-      // 회원가입 성공 후 처리 로직 추가
+      console.log('status >', typeof response.status);
+      // if (response.status === '200') {
+      //   setStep('COMPLETE');
+      // }
     } catch (error) {
       console.error('회원가입 실패:', error);
     }
@@ -41,9 +37,7 @@ function NickNameInput({ navigation, setStep }: any) {
         <TextInput
           placeholder="닉네임"
           style={focused ? Styles.inputFocused : Styles.input}
-          onChangeText={(e) => {
-            setIsNickName(e);
-          }}
+          onChangeText={(e) => setIsNickName(e)}
           onFocus={() => setFocused(true)}
           value={isNickName}
           keyboardType="default"

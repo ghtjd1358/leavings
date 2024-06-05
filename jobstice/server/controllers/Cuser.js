@@ -2,7 +2,7 @@ const UserSchema = require('../models/UserSchema');
 
 exports.register = async (req, res) => {
   const { user_ID, user_PW, user_NickName } = req.body;
-
+  console.log('백엔드', req.body);
   try {
     console.log('백엔드', req.body);
     await UserSchema.create({

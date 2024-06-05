@@ -12,6 +12,7 @@ import PwInput from './PwInput';
 import SignUpStep from './SignUpStep';
 import { useState, useEffect } from 'react';
 import NickNameInput from './NickNameInput';
+import { CommonActions } from '@react-navigation/native';
 
 function SignUpContainer({ navigation }: any) {
   const [step, setStep] = useState('ID');
@@ -27,9 +28,6 @@ function SignUpContainer({ navigation }: any) {
       e.preventDefault();
       handleBackPress();
     });
-    // if (step === 'COMPLETE') {
-    //   navigation.navigate('Login');
-    // }
 
     return unsubscribe;
   }, [navigation, step]);
@@ -54,8 +52,8 @@ function SignUpContainer({ navigation }: any) {
         return <PwInput navigation={navigation} setStep={setStep} />;
       case 'NICKNAME':
         return <NickNameInput navigation={navigation} setStep={setStep} />;
-      default:
-        return <IdInput navigation={navigation} setStep={setStep} />;
+      case '':
+        navigation.dispatch(CommonActions.goBack());
     }
   };
 

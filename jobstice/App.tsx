@@ -67,7 +67,7 @@ function AppNavigator() {
         component={FindPwPage}
         options={{ headerTitle: '' }}
       />
-      <Stack.Screen
+      {/* <Stack.Screen
         name="registerPW"
         component={PwInput}
         options={{ headerTitle: '' }}
@@ -76,7 +76,7 @@ function AppNavigator() {
         name="registerNickName"
         component={NickNameInput}
         options={{ headerTitle: '' }}
-      />
+      /> */}
     </Stack.Navigator>
   );
 }

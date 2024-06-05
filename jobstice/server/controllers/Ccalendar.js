@@ -16,18 +16,16 @@ exports.createCalendar = async (req, res) => {
     res.status(400).send(error);
   }
 };
-// 캘린더 항목 가져오기
+// 특정 날짜의 캘린더 데이터 조회
 exports.getCalendar = async (req, res) => {
-  const date = req.params.date;
-
+  const date = req.params.date; // URL에서 날짜를 추출
+  console.log('Requested date:', date); // 요청된 날짜 콘솔 출력
   try {
-    const calendarData = await Calendar.findOne({ calendarDate: date });
-    if (!calendarData) {
-      return res.status(404).json({ message: 'test?' });
-    }
-    res.status(200).json(calendarData);
+    const events = await Calendar.find({ calendarDate: date });
+    res.json(events);
   } catch (error) {
-    res.status(500).json({ message: 'Server error', error });
+    res.status(500).json({ message: error.message });
   }
 };
+
 

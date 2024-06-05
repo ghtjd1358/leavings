@@ -1,8 +1,14 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { View, Text, Modal, TouchableOpacity, TextInput } from 'react-native';
+import {
+  View,
+  Text,
+  Modal,
+  TouchableOpacity,
+  TextInput,
+  FlatList,
+} from 'react-native';
 import { styles } from './CalendarContent.style';
-import { FlatList } from 'react-native-gesture-handler';
 
 interface CalendarData {
   _id: string;
@@ -14,6 +20,7 @@ interface CalendarData {
 interface CalendarContentProps {
   date: string;
   calendarData: CalendarData[];
+  setCalendarData: (data: CalendarData[]) => void;
 }
 
 const CalendarContent = ({ date, calendarData }: CalendarContentProps) => {
@@ -33,27 +40,10 @@ const CalendarContent = ({ date, calendarData }: CalendarContentProps) => {
       setModalVisible(false);
       setTitle('');
       setCategory('');
-      // getCalendar(); // 새 데이터 가져오기
     } catch (error) {
       console.error('Error:', error);
     }
   };
-
-  // const getCalendar = async () => {
-  //   try {
-  //     const res = await axios.get('http://localhost:3000/calendar');
-  //     console.log('>>>>데이터가져옴', res.data);
-  //     setCalendarData(res.data);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   getCalendar();
-  // }, []);
-
-  console.log('calendarData>>>', calendarData);
 
   return (
     <>
@@ -68,14 +58,14 @@ const CalendarContent = ({ date, calendarData }: CalendarContentProps) => {
         </View>
         <FlatList
           data={calendarData}
-          keyExtractor={(item) => item._id}
+          keyExtractor={(item) => item._id} // 고유한 key로 _id 사용
           renderItem={({ item }) => (
-            <View>
+            <View key={item._id}>
               <Text>{item.calendarTitle}</Text>
               <Text>{item.calendarContent}</Text>
             </View>
           )}
-          ListEmptyComponent={<Text>No data available</Text>} // 추가: 데이터가 없을 때 표시
+          ListEmptyComponent={<Text>등록된 일정이 없습니다.</Text>} // 추가: 데이터가 없을 때 표시
         />
 
         <Modal

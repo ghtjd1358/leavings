@@ -3,7 +3,7 @@ import { StatusBar } from 'expo-status-bar';
 import { _Colors } from '../styles/colors';
 import Header from '../components/Header/Header';
 import MainPageContentTop from '../components/MainPageContent/MainPageContentTop';
-import MainPageContentMiddle from '../components/MainPageContent/MainPageContentMiddle';
+// import MainPageContentMiddle from '../components/MainPageContent/MainPageContentMiddle';
 import MainPageContentBottom from '../components/MainPageContent/MainPageContentBottom';
 
 function MainPage({ navigation }: any) {
@@ -20,7 +20,7 @@ function MainPage({ navigation }: any) {
           showsVerticalScrollIndicator={true}
           indicatorStyle="black"
         >
-          <MainPageContentMiddle />
+          {/* <MainPageContentMiddle /> */}
           <MainPageContentBottom />
         </ScrollView>
       </View>

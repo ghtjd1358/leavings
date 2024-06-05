@@ -7,13 +7,17 @@ const CalendarSchema = new Schema({
     ref: 'User',
     require: true,
   },
-  title: {
+  calendarTitle: {
     require: true,
     type: String,
   },
-  content: {
+  calendarContent: {
     require: true,
     type: String,
+  },
+  calendarDate: {
+    type: String,
+    required: true,
   },
 });
 

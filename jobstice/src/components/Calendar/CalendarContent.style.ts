@@ -20,7 +20,6 @@ export const styles = StyleSheet.create({
   addButton: {
     fontSize: 24,
     color: 'black',
-    marginLeft: 10,
   },
   modalContainer: {
     flex: 1,

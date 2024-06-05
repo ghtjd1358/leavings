@@ -4,16 +4,7 @@ import { View, Text, StyleSheet } from 'react-native';
 import { TextInput } from 'react-native';
 
 const CalendarModal = () => {
-  return (
-    <View style={styles.container}>
-      <Text>제목</Text>
-      <TextInput style={styles.input}></TextInput>
-      <Text>카테고리</Text>
-      <TextInput style={styles.input}></TextInput>
-      <Text>시간</Text>
-      <TextInput style={styles.input}></TextInput>
-    </View>
-  );
+  return <View style={styles.container}></View>;
 };
 
 const styles = StyleSheet.create({

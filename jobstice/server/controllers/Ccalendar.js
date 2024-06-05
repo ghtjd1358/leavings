@@ -10,17 +10,22 @@ exports.createCalendar = async (req, res) => {
       calendarDate,
     });
     await newCalendar.save();
-    res.status(201).send(newCalendar);
+    // console.log('Claender req data >>>>>', req.body);
+    res.status(201).json(newCalendar);
   } catch (error) {
     res.status(400).send(error);
   }
 };
-// 캘린더 항목 가져오기
+// 특정 날짜의 캘린더 데이터 조회
 exports.getCalendar = async (req, res) => {
+  const date = req.params.date; // URL에서 날짜를 추출
+  console.log('Requested date:', date); // 요청된 날짜 콘솔 출력
   try {
-    const calendars = await Calendar.find();
-    res.status(200).send(calendars);
+    const events = await Calendar.find({ calendarDate: date });
+    res.json(events);
   } catch (error) {
-    res.status(400).send(error);
+    res.status(500).json({ message: error.message });
   }
 };
+
+

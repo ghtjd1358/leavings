@@ -7,6 +7,8 @@ const cors = require('cors');
 const axios = require('axios');
 const Ctest = require('./controllers/Ctest.js');
 const Cuser = require('./controllers/Cuser.js');
+// const createCalendar = require('./controllers/Ccalendar.js');
+const calendarRoutes = require('./routes/CalendarRoutes.js');
 
 const app = express();
 const port = 3000;
@@ -24,8 +26,10 @@ app.get('/job-search', async (req, res) => {
     const apiUrl = `https://oapi.saramin.co.kr/job-search?access-key=${API_KEY}`;
     const response = await axios.get(apiUrl, {
       headers: {
-        Accept: 'application/json',
-      },
+
+        'Accept': 'application/json'
+      }
+
     });
     const data = response.data;
     console.log(data);
@@ -51,6 +55,11 @@ app.post('/nickCheck', Cuser.nickNameCheck);
 
 // 회원가입
 app.post('/signup', Cuser.register);
+
+// 달력
+app.use('/', calendarRoutes);
+// app.post('/', createCalendar.createCalendar);
+// app.get(`/`, createCalendar.getCalendar);
 
 app.listen(port, () => {
   console.log(`localhost:${port} open`);

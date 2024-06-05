@@ -1,40 +1,59 @@
-// // App.js
-// import React from 'react';
-// import { NavigationContainer } from '@react-navigation/native';
-// import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-// import HomeScreen from '../../pages/EmploymentPage';
-// import SettingsScreen from '../../pages/EmploymentPage2';
-// import { Ionicons } from '@expo/vector-icons';
+import { useState } from 'react';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+// import EmploymentPage from '../../pages/EmploymentPage';
+// import EmploymentPage2 from '../../pages/EmploymentPage2';
 
-// const Tab = createBottomTabNavigator();
 
-// const App = () => {
-//   return (
-//     <NavigationContainer>
-//       <Tab.Navigator
-//         screenOptions={({ route }) => ({
-//           tabBarIcon: ({ focused, color, size }) => {
-//             let iconName;
+const EmploymentPage = () => (
+  <View>
+    <Text>국내 관련 글들이 여기에 표시됩니다.</Text>
+  </View>
+);
 
-//             if (route.name === 'EmploymentPage') {
-//               iconName = focused ? 'EmploymentPage' : 'Home';
-//             } else if (route.name === 'EmploymentPage2') {
-//               iconName = focused ? 'settings' : 'settings-outline';
-//             }
+const EmploymentPage2 = () => (
+  <View>
+    <Text>해외 관련 글들이 여기에 표시됩니다.</Text>
+  </View>
+);
 
-//             return <Ionicons name={iconName} size={size} color={color} />;
-//           },
-//         })}
-//         tabBarOptions={{
-//           activeTintColor: 'tomato',
-//           inactiveTintColor: 'gray',
-//         }}
-//       >
-//         <Tab.Screen name="EmploymentPage" component={EmploymentPage} />
-//         <Tab.Screen name="EmploymentPage2" component={EmploymentPage2} />
-//       </Tab.Navigator>
-//     </NavigationContainer>
-//   );
-// };
+const EmployTab = () => {
+  const [selectedTab, setSelectedTab] = useState('korean');
 
-// export default App;
+  return (
+    <View style={styles.container}>
+      <View style={styles.tabContainer}>
+        <TouchableOpacity style={styles.tabButton} onPress={() => setSelectedTab('korean')}>
+          <Text>국내</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.tabButton} onPress={() => setSelectedTab('foreign')}>
+          <Text>해외</Text>
+        </TouchableOpacity>
+      </View>
+      <View style={styles.contentContainer}>
+        {selectedTab === 'korean' ? <EmploymentPage /> : <EmploymentPage2 />}
+      </View>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  tabContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    marginTop: 20,
+  },
+  tabButton: {
+    padding: 10,
+  },
+  contentContainer: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 20,
+  },
+});
+
+export default EmployTab;

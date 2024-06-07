@@ -7,11 +7,16 @@ const cors = require('cors');
 const axios = require('axios');
 const Ctest = require('./controllers/Ctest.js');
 const Cuser = require('./controllers/Cuser.js');
+
 // const createCalendar = require('./controllers/Ccalendar.js');
 const calendarRoutes = require('./routes/CalendarRoutes.js');
 
 const app = express();
 const port = 3000;
+
+const uri = process.env.DB_KEY;
+
+console.log('환경 변수 확인 :', uri); 
 
 connect(); // DB 연결 함수
 
@@ -25,20 +30,17 @@ app.get('/job-search', async (req, res) => {
   try {
     const apiUrl = `https://oapi.saramin.co.kr/job-search?access-key=${API_KEY}`;
     const response = await axios.get(apiUrl, {
+      maxRedirects: 5 ,
       headers: {
-
         'Accept': 'application/json'
       }
-
     });
     const data = response.data;
     console.log(data);
-    console.log(data.jobs);
-
     res.json(data);
   } catch (error) {
     console.error(error);
-    res.status(500).send('서버에서 데이터를 가져오는데 실패했습니다.');
+    res.status(500).send('안되는군요');
   }
 });
 

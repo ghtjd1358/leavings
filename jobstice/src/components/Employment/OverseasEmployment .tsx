@@ -3,7 +3,7 @@ import { View, Text, StyleSheet } from 'react-native';
 const OverseasEmployment  = () => {
   return (
     <View style={styles.container}>
-      <Text>해외에 관한 내용</Text>
+      <Text>해외에 관한 내용입니다만</Text>
     </View>
   );
 };

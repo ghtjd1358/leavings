@@ -49,7 +49,7 @@ const DomesticEmployment = () => {
 
       <View style={employCardNormal.normalCard}>
         <Text style={employCardNormal.normalCardTitle}>카드 제목</Text>
-        <Text style={employCardNormal.normalCardContent}>카드 내용입니다. 여기에 필요한 정보를 채워 넣으세요.</Text>
+        <Text style={employCardNormal.normalCardContent}>카드 내용입니다. 여기에 필요한 정보를 채워 넣으세요!.</Text>
       </View>
     </ScrollView>
 
